@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_actions_job:
+    name: A job to test our action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test action step
+        id: testing
+        uses: spco/bio-tools-action
+        with:
+          repo_id: "test-repo-for-actions"
+          owner_id: "spco"
+
+      # Use the output from the `hello` step
+      - name: Get the output url
+        run: echo "The url was ${{ steps.testing.outputs.url }}"
