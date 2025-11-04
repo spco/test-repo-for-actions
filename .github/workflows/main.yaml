@@ -28,6 +28,8 @@ jobs:
         with:
           repo_id: "test-repo-for-actions"
           owner_id: "spco"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Use the output from the `hello` step
       - name: Get the output url
