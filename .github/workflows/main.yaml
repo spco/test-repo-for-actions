@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test action step
         id: testing
-        uses: spco/bio-tools-action@v1.2
+        uses: spco/bio-tools-action@v1.3
         with:
           repo_id: "test-repo-for-actions"
           owner_id: "spco"
