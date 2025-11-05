@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: install bridge CLI
-        id: install-bridge
-        run: |
-          pipx install poetry
+      #   - name: install bridge CLI
+      #     id: install-bridge
+      #     run: |
+      #       pipx install poetry
 
-          git clone https://github.com/bio-tools/biohackathon2025.git
-          cd biohackathon2025
+      #       git clone https://github.com/bio-tools/biohackathon2025.git
+      #       cd biohackathon2025
 
-          # install (all groups)
-          poetry install
+      #       # install (all groups)
+      #       poetry install
       - name: Test action step
         id: testing
         uses: spco/bio-tools-action@v1.5.6
