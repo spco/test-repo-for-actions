@@ -9,25 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      #   - name: install bridge CLI
-      #     id: install-bridge
-      #     run: |
-      #       pipx install poetry
-
-      #       git clone https://github.com/bio-tools/biohackathon2025.git
-      #       cd biohackathon2025
-
-      #       # install (all groups)
-      #       poetry install
-      - name: Test action step
-        id: testing
+      - name: Generate biotools entry
+        id: generate_biotools
         uses: spco/bio-tools-action@v1.5.7
         with:
           repo_id: "test-repo-for-actions"
           owner_id: "spco"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Use the output from the `hello` step
-      - name: Get the output url
-        run: echo "The url was ${{ steps.testing.outputs.url }}"
